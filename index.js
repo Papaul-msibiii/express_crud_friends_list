@@ -61,8 +61,8 @@ app.use("/friends", function auth(req, res, next) {
 
 // Login endpoint
 app.post("/login", (req, res) => {
-    const username = req.body.username;
-    const password = req.body.password;
+    const username = req.query.username;
+    const password = req.query.password;
 
     // Check if username or password is missing
     if (!username || !password) {
@@ -88,8 +88,8 @@ app.post("/login", (req, res) => {
 
 // Register a new user
 app.post("/register", (req, res) => {
-    const username = req.body.username;
-    const password = req.body.password;
+    const username = req.query.username;
+    const password = req.query.password;
 
     // Check if both username and password are provided
     if (username && password) {
